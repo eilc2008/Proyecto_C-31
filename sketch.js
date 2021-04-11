@@ -14,29 +14,29 @@ function setup() {
   world = engine.world;
   ground = new Ground(width/2,height,width,20);
 
-  //create division objects
+  //crea los objetos para dividir
   for (var k = 0; k <=80; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
 
-  //create 1st row of plinko objects
+  //crea la primera fila de objetos plinko
   for (var j = 75; j <=width; j=j+50) { 
     plinkos.push(new Plinko(j,75));
   }
 
-  //create 2nd row of plinko objects
+  //crea la segunda fila de objetos plinko
   for (var j = 50; j <=width-10; j=j+50) 
   {
     plinkos.push(new Plinko(j,175));
   }
 
-  //create 3rd row of plinko objects
+  //crea la tercera fila de objetos plinko
 
   
-  //create 4th row of plinko objects
+  //crea la cuarta fila de objetos plinko
 
 
-  //create particle objects
+  //crea los objetos partícula
   
     
 }
@@ -50,16 +50,16 @@ function draw() {
   Engine.update(engine);
   ground.display();
   
-  //display the plinkos 
+  //muestra los plinkos 
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].display();   
   }
    
-  //display the divisions
+  //muestra las divisiones
   for (var k = 0; k < divisions.length; k++) {
     divisions[k].display();
   }
 
-  //display the paricles 
+  //muestra las partículas 
 
 }
