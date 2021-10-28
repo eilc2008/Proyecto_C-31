@@ -15,7 +15,7 @@ function setup() {
   ground = new Ground(width/2,height,width,20);
 
   //crea los objetos para dividir
-  for (var k = 0; k <=80; k = k + 80) {
+  for (var k = 0; k <=800; k = k + 80) {
     divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
   }
 
@@ -31,13 +31,20 @@ function setup() {
   }
 
   //crea la tercera fila de objetos plinko
-
+  for (var j = 75; j <=width; j=j+50) { 
+    plinkos.push(new Plinko(j,275));
+  }
   
   //crea la cuarta fila de objetos plinko
-
+  for (var j = 50; j <=width-10; j=j+50) 
+  {
+    plinkos.push(new Plinko(j,375));
+  }
 
   //crea los objetos partícula
-  
+  /*if (frameCount%60 === 0){
+    particles.push(new Particle(random(width/2-10,width/2+10),width/2,10));
+  }*/
     
 }
  
@@ -61,5 +68,12 @@ function draw() {
   }
 
   //muestra las partículas 
+  if (frameCount%60 === 0){
+    particles.push(new Particle(random(width/2-10,width/2+10),10,10));
+  }
 
+  for (var j = 0; j < particles.length; j++) {
+    particles[j].display();   
+  }
+  //console.log(particles.length);
 }
